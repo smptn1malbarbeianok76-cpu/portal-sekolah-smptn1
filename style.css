@@ -1,0 +1,120 @@
+:root {
+  --biru: #123b63;
+  --biru-2: #1d5b8f;
+  --emas: #e0ad43;
+  --teks: #243447;
+  --muted: #64748b;
+  --latar: #f3f7fb;
+  --putih: #fff;
+  --garis: #dbe5ef;
+  --bayang: 0 12px 32px rgba(18, 59, 99, .09);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--teks); background: var(--latar);
+  font-family: Arial, Helvetica, sans-serif; line-height: 1.65;
+}
+header {
+  padding: 28px 18px; text-align: center; color: #fff;
+  background: linear-gradient(120deg, #0d2d4d, #1d5b8f);
+}
+header h1 { margin: 0; font-size: clamp(1.25rem, 3vw, 2rem); letter-spacing: .04em; }
+.slogan { margin: 5px 0 0; color: #e9f2fa; }
+.menu {
+  position: sticky; top: 0; z-index: 50; display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: center; gap: 4px;
+  padding: 9px 12px; background: #fff; box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+.menu > a, .tombol-dropdown {
+  display: inline-block; padding: 9px 12px; border: 0; border-radius: 8px;
+  color: var(--biru); background: transparent; text-decoration: none;
+  font: inherit; font-size: .92rem; font-weight: 700; cursor: pointer;
+}
+.menu > a:hover, .tombol-dropdown:hover { background: #edf4fa; }
+.dropdown-media { position: relative; }
+.isi-dropdown {
+  display: none; position: absolute; top: 100%; left: 0; min-width: 220px;
+  padding: 8px; background: #fff; border: 1px solid var(--garis);
+  border-radius: 12px; box-shadow: var(--bayang);
+}
+.isi-dropdown.dropdown-terbuka { display: grid; }
+.isi-dropdown a { padding: 9px 11px; color: var(--teks); text-decoration: none; border-radius: 7px; }
+.isi-dropdown a:hover { background: #edf4fa; }
+main { width: min(1120px, calc(100% - 30px)); margin: 26px auto 50px; }
+main > section {
+  margin: 22px 0; padding: clamp(20px, 4vw, 38px);
+  background: var(--putih); border: 1px solid var(--garis);
+  border-radius: 18px; box-shadow: var(--bayang);
+}
+h2 { color: var(--biru); line-height: 1.25; }
+.hero { display: flex; align-items: center; justify-content: center; gap: 22px; text-align: left; }
+.logo { width: 105px; height: 105px; object-fit: contain; }
+.hero-text h2 { margin: 4px 0; }
+.label-beranda, .portal-eyebrow { color: #a36d0c; font-size: .78rem; font-weight: 800; letter-spacing: .13em; }
+.tagline { color: var(--muted); }
+.pengumuman-berjalan { display: flex; gap: 12px; align-items: center; margin: 22px 0; padding: 11px 14px; background: #fff6e4; border-radius: 10px; overflow: hidden; }
+.label-pengumuman { flex: 0 0 auto; color: #865500; font-weight: 800; }
+.teks-berjalan { overflow: hidden; }
+.isi-teks-berjalan { white-space: nowrap; }
+.hero-banner { position: relative; overflow: hidden; border-radius: 15px; background: #eaf1f7; }
+.slideshow-sekolah { min-height: 280px; position: relative; }
+.foto-sekolah { display: none; width: 100%; height: 360px; object-fit: cover; }
+.foto-sekolah.slide-aktif { display: block; }
+.banner-caption { padding: 18px 22px; color: #fff; background: var(--biru); }
+.banner-caption h3, .banner-caption p { margin: 3px 0; }
+.sambutan { padding: 18px 0; }
+.keunggulan-beranda, .daftar-pintasan, .jumlah-siswa, .kontak-sekolah {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px;
+}
+.item-keunggulan, .kartu-jumlah-siswa, .kartu-kontak {
+  padding: 18px; border: 1px solid var(--garis); border-radius: 13px; background: #fbfdff;
+}
+.item-keunggulan span { font-size: 1.8rem; }
+.tombol-akses, button, .tombol-maps, .tombol-whatsapp {
+  display: inline-block; padding: 10px 16px; border: 0; border-radius: 9px;
+  color: #fff; background: var(--biru-2); text-decoration: none; cursor: pointer; font-weight: 700;
+}
+input, textarea, select { max-width: 100%; padding: 11px 12px; border: 1px solid #cbd7e3; border-radius: 8px; font: inherit; }
+input:focus, textarea:focus, select:focus { outline: 3px solid rgba(29,91,143,.15); border-color: var(--biru-2); }
+#daftarInformasi { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.kartu-informasi, .kartu-berita, .kartu-siswa {
+  padding: 16px; border: 1px solid var(--garis); border-radius: 12px; background: #fff;
+}
+.kategori-informasi { color: #94620d; font-size: .82rem; font-weight: 700; }
+.daftar-guru { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.kartu-guru { overflow: hidden; border: 1px solid var(--garis); border-radius: 13px; background: #fff; }
+.foto-guru { width: 100%; height: 210px; object-fit: cover; cursor: zoom-in; }
+.info-guru { padding: 12px; }
+.lightbox-galeri { z-index: 100; }
+.portal-section { scroll-margin-top: 90px; }
+.portal-heading { max-width: 760px; margin-bottom: 24px; }
+.portal-heading h2 { margin: 5px 0; }
+.portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+.portal-card {
+  display: flex; flex-direction: column; align-items: flex-start; min-height: 220px;
+  padding: 20px; border: 1px solid var(--garis); border-radius: 15px;
+  background: linear-gradient(160deg, #fff, #f5f9fd);
+}
+.portal-icon { font-size: 2rem; }
+.portal-card h3 { margin: 10px 0 4px; color: var(--biru); }
+.portal-card p { margin: 0 0 15px; color: var(--muted); }
+.portal-status { margin-top: auto; padding: 5px 10px; border-radius: 30px; color: #77500c; background: #fff1cc; font-size: .78rem; font-weight: 800; }
+.portal-status-active { color: #17633c; background: #e1f5e9; }
+.portal-notice { margin-top: 20px; padding: 16px 18px; border-left: 4px solid var(--emas); border-radius: 9px; background: #fff8e9; }
+.portal-notice p { margin: 4px 0 0; }
+.footer-sekolah { padding: 28px 15px; text-align: center; color: #eaf2fa; background: #0d2d4d; }
+.whatsapp-melayang { position: fixed; right: 18px; bottom: 18px; z-index: 40; width: 54px; height: 54px; padding: 10px; border-radius: 50%; background: #20b96b; box-shadow: var(--bayang); }
+.whatsapp-melayang img { width: 100%; height: 100%; }
+@media (max-width: 650px) {
+  header { padding: 20px 12px; }
+  .menu { position: static; gap: 2px; }
+  .menu > a, .tombol-dropdown { padding: 7px 9px; font-size: .84rem; }
+  .isi-dropdown { left: auto; right: 0; }
+  main { width: min(100% - 18px, 1120px); margin-top: 12px; }
+  main > section { padding: 18px 14px; border-radius: 13px; }
+  .hero { flex-direction: column; text-align: center; }
+  .logo { width: 82px; height: 82px; }
+  .foto-sekolah { height: 230px; }
+  .pengumuman-berjalan { align-items: flex-start; flex-direction: column; gap: 2px; }
+}
